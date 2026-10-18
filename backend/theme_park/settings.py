@@ -49,7 +49,10 @@ MIDDLEWARE = [
 ]
 
 # Permitir requisições do frontend
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://reservas-de-mesas.vercel.app",
+    "https://reservas-de-mesas-121rl986c-guardiao-epi-s-projects.vercel.app",
+]
 
 ROOT_URLCONF = 'theme_park.urls'
 
