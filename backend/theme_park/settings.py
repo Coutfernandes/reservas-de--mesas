@@ -49,15 +49,18 @@ INSTALLED_APPS = [
     'reservations',  # <--- Adiciona esta linha aqui!
 ]
 
+# theme_park/settings.py
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # <--- Coloque bem no topo, antes dos outros middlewares se possível
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # ... outros middlewares ...
 ]
+
+# Permitir todas as origens em ambiente de desenvolvimento
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'theme_park.urls'
 
